@@ -5,11 +5,11 @@
 int maxOfVector(const std::vector<int> &vec)
 {
     int max = vec.front();
-    for (std::vector<int>::const_iterator it = vec.begin(); it != vec.end(); ++it)
+    for (auto& element : vec)
     {
-        if (*it > max)
+        if (element > max)
         {
-            max = *it;
+            max = element;
         }
     }
     std::cout << max << '\n';
