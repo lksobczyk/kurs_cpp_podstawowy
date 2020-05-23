@@ -10,5 +10,5 @@ std::vector<int> generateSequence(int count, int step)
         vec.push_back(sequenceElement += step);
     }
 
-    return {};
+    return vec;
 }
