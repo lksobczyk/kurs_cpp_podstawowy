@@ -1,6 +1,5 @@
 #pragma once
 #include <vector>
-#include <iostream>
 
 std::vector<int> generateSequence(int count, int step)
 {
@@ -9,9 +8,6 @@ std::vector<int> generateSequence(int count, int step)
     for (int i = 0; i < count; ++i)
     {
         vec.push_back(sequenceElement += step);
-    }
-    for (auto& element : vec) {
-        std::cout << element << '\n';
     }
 
     return {};
