@@ -4,14 +4,14 @@
 
 int maxOfVector(const std::vector<int> &vec)
 {
-    int max = vec.front();
-    for (auto& element : vec)
+    int maxValue = vec.front();
+    for (auto &vectorElement : vec)
     {
-        if (element > max)
+        if (vectorElement > maxValue)
         {
-            max = element;
+            maxValue = vectorElement;
         }
     }
 
-    return max;
+    return maxValue;
 }
