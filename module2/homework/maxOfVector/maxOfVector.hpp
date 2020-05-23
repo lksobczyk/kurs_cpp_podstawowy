@@ -12,7 +12,6 @@ int maxOfVector(const std::vector<int> &vec)
             max = element;
         }
     }
-    std::cout << max << '\n';
 
-    return {};
+    return max;
 }
