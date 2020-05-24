@@ -5,11 +5,11 @@ int addEven(const std::vector<int>& numbers)
 {
 	int result = 0;
 
-	for (int number : numbers)
+	for (const int number : numbers)
 	{
 		if (number % 2 == 0)
 		{
-			result = result + number;
+			result += number;
 		}
 	}
 
