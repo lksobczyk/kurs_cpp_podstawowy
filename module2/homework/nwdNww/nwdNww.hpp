@@ -44,3 +44,4 @@ int NWW(int lhs, int rhs)
 
 	return (lhs * rhs) / NWD(lhs, rhs);
 }
+
