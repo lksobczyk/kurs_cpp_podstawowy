@@ -7,7 +7,8 @@ int addEven(const std::vector<int>& numbers)
 
 	for (const int number : numbers)
 	{
-		if (number % 2 == 0)
+		// if (number % 2 == 0)
+		if ((number & 1) == 0)
 		{
 			result += number;
 		}
