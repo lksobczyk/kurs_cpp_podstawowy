@@ -29,3 +29,29 @@ bool doesPasswordsMatch(const std::string &password, const std::string &repeated
 
     return !(password.compare(repeatedPassword));
 }
+
+int checkPasswordRules(const std::string &password)
+{
+    if (password.size() < 9)
+        return PasswordNeedsAtLeastNineCharacters;
+    if (!std::any_of(password.begin(), password.end(), [](unsigned char c) {
+            return std::isdigit(c);
+        }))
+    {
+        return PasswordNeedsAtLeastOneNumber;
+    }
+    if (!std::any_of(password.begin(), password.end(), [](unsigned char c) {
+            return std::ispunct(c);
+        }))
+    {
+        return PasswordNeedsAtLeastOneSpecialCharacter;
+    }
+    if (!std::any_of(password.begin(), password.end(), [](unsigned char c) {
+            return std::isupper(c);
+        }))
+    {
+        return PasswordNeedsAtLeastOneUppercaseLetter;
+    }
+
+    return Ok;
+}
