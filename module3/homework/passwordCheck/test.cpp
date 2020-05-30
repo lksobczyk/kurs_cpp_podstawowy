@@ -80,6 +80,33 @@ TEST(checkPasswordTests, returnsPasswordsDoesNotMatchForDifferentPasswords)
     EXPECT_EQ(checkPassword(PROPER_PASSWORD, EMPTY_PASSWORD), ErrorCode::PasswordsDoesNotMatch); // equal ==
     EXPECT_EQ(checkPassword(EMPTY_PASSWORD, PROPER_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
     EXPECT_EQ(checkPassword(TOO_SHORT_PASSWORD, PROPER_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(PROPER_PASSWORD, TOO_SHORT_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(PROPER_PASSWORD, NO_DIGIT_IN_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(NO_DIGIT_IN_PASSWORD, PROPER_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(PROPER_PASSWORD, NO_SPECIAL_CHARACTER_IN_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(NO_SPECIAL_CHARACTER_IN_PASSWORD, PROPER_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(PROPER_PASSWORD, NO_UPPERCASE_CHARACTER_IN_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(NO_UPPERCASE_CHARACTER_IN_PASSWORD, PROPER_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(EMPTY_PASSWORD, TOO_SHORT_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(TOO_SHORT_PASSWORD, EMPTY_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(EMPTY_PASSWORD, NO_DIGIT_IN_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(NO_DIGIT_IN_PASSWORD, EMPTY_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(EMPTY_PASSWORD, NO_SPECIAL_CHARACTER_IN_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(NO_SPECIAL_CHARACTER_IN_PASSWORD, EMPTY_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(EMPTY_PASSWORD, NO_UPPERCASE_CHARACTER_IN_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(NO_UPPERCASE_CHARACTER_IN_PASSWORD, EMPTY_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(TOO_SHORT_PASSWORD, NO_DIGIT_IN_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(NO_DIGIT_IN_PASSWORD, TOO_SHORT_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(TOO_SHORT_PASSWORD, NO_SPECIAL_CHARACTER_IN_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(NO_SPECIAL_CHARACTER_IN_PASSWORD, TOO_SHORT_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(TOO_SHORT_PASSWORD, NO_UPPERCASE_CHARACTER_IN_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(NO_UPPERCASE_CHARACTER_IN_PASSWORD, TOO_SHORT_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(NO_DIGIT_IN_PASSWORD, NO_SPECIAL_CHARACTER_IN_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(NO_SPECIAL_CHARACTER_IN_PASSWORD, NO_DIGIT_IN_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(NO_DIGIT_IN_PASSWORD, NO_UPPERCASE_CHARACTER_IN_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(NO_UPPERCASE_CHARACTER_IN_PASSWORD, NO_DIGIT_IN_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(NO_SPECIAL_CHARACTER_IN_PASSWORD, NO_UPPERCASE_CHARACTER_IN_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(NO_UPPERCASE_CHARACTER_IN_PASSWORD, NO_SPECIAL_CHARACTER_IN_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
 }
 
 TEST(getErrorMessageTests, returnsErrorCodeAsString)
