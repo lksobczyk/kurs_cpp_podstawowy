@@ -1,2 +1,25 @@
+#include <algorithm>
+#include <cctype>
+#include <iostream>
+#include <string>
+
 #include "validation.hpp"
-// TODO: Put implementations here
+
+std::string getErrorMessage(const int error)
+{
+    switch (error)
+    {
+    case 0:
+        return "OK";
+    case 1:
+        return "Password Needs At Least Nine Characters";
+    case 2:
+        return "Password Needs At Least One Number";
+    case 3:
+        return "Password Needs At Least One Special Character";
+    case 4:
+        return "Password Needs At Least One Uppercase Letter";
+    }
+
+    return "Passwords Does Not Match";
+}
