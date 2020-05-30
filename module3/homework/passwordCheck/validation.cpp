@@ -23,3 +23,9 @@ std::string getErrorMessage(const int error)
 
     return "Passwords Does Not Match";
 }
+
+bool doesPasswordsMatch(const std::string &password, const std::string &repeatedPassword)
+{
+
+    return !(password.compare(repeatedPassword));
+}
