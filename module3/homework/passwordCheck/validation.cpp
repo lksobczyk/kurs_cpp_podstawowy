@@ -55,3 +55,13 @@ int checkPasswordRules(const std::string &password)
 
     return Ok;
 }
+
+int checkPassword(const std::string &password, const std::string &repeatedPassword)
+{
+    if (doesPasswordsMatch(password, repeatedPassword))
+    {
+        return checkPasswordRules(password);
+    }
+
+    return PasswordsDoesNotMatch;
+}
