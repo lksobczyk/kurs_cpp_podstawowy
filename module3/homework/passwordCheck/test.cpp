@@ -4,6 +4,9 @@
 std::string EMPTY_PASSWORD = "";
 std::string PROPER_PASSWORD = "abcABC123!@#";
 std::string TOO_SHORT_PASSWORD = "12345678";
+std::string NO_DIGIT_IN_PASSWORD = "abcABC!@#";
+std::string NO_SPECIAL_CHARACTER_IN_PASSWORD = "abcABC123";
+std::string NO_UPPERCASE_CHARACTER_IN_PASSWORD = "abc123!@#";
 auto MIN_ALLOWED_ERROR_CODE = ErrorCode::Ok;
 auto MAX_ALLOWED_ERROR_CODE = ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
 
