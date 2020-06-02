@@ -32,6 +32,10 @@ void add10(VectorSPtr& vec) {
 }
 
 void sub10(int* const pItem) {
+    if (pItem)
+    {
+        *pItem -= 10;
+    }
 }
 
 void sub10(VectorSPtr& vec) {
