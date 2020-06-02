@@ -22,6 +22,13 @@ void print(const VectorSPtr& vec) {
 }
 
 void add10(VectorSPtr& vec) {
+    for (auto& pItem : vec)
+    {
+        if (pItem)
+        {
+            *pItem += 10;
+        }
+    }
 }
 
 void sub10(int* const pItem) {
