@@ -39,4 +39,8 @@ void sub10(int* const pItem) {
 }
 
 void sub10(VectorSPtr& vec) {
+    for (auto& pItem : vec)
+    {
+        sub10(pItem.get());
+    }
 }
