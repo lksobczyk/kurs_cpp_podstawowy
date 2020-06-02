@@ -15,6 +15,10 @@ VectorSPtr generate(int count) {
 }
 
 void print(const VectorSPtr& vec) {
+    for (const auto& pItem : vec)
+    {
+        std::cout << *pItem << ' ';
+    }
 }
 
 void add10(VectorSPtr& vec) {
